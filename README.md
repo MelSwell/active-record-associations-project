@@ -124,7 +124,7 @@ book.users
 # => [#<User:8x007f867390fe38 @name="The Doctor">]
 ```
 
-When a user check's out a book, it should create a new UserBook record (or Checkout record or whatever you want to call you join table/model). That new UserBook record should have a attribute (and therefore table column) of `returned?` which should default to `false`
+When a user check's out a book, it should create a new UserBook record (or Checkout record or whatever you want to call you join table/model). That new UserBook record should have a attribute (and therefore table column) of `returned` which should default to `false`
 
 So, after running the code above, I should be able to run the following code and see the following return values:
 

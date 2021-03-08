@@ -4,6 +4,7 @@ User.destroy_all
 Author.destroy_all
 Book.destroy_all
 Category.destroy_all
+UserBook.destroy_all
 
 seth = User.create(name: "Seth")
 tess = User.create(name: "Tess")
@@ -32,5 +33,11 @@ got = Book.create(title: "A Game of Thrones", category_id: fant.id, author_id: g
 sos = Book.create(title: "A Storm of Swords", category_id: fant.id, author_id: grrm.id)
 doad = Book.create(title: "Do Androids Dream of Electric Sheep?", category_id: scifi.id, author_id: pkd.id)
 asd = Book.create(title: "A Scanner Darkly", category_id: scifi.id, author_id: pkd.id)
+
+ub1 = UserBook.create(user_id: tess.id, book_id: tsha.id)
+ub2 = UserBook.create(user_id: tess.id, book_id: freak.id)
+ub3 = UserBook.create(user_id: tim.id, book_id: got.id)
+
+
 
 puts "Seeded!"
