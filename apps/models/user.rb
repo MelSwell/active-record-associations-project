@@ -16,13 +16,8 @@ class User < ActiveRecord::Base
   end
 
   def currently_checked_out_books
-    checked_out_books = []
-    all_book_ids = self.books.map { |book| book.id }
-    all_book_ids.each do |book_id|
-    checked_out_books << self.user_books.select { |ub| ub.book_id == book_id && ub.returned == false }
-         .map { |ub| ub.book.title }
-    end
-    checked_out_books.flatten
+    self.user_books.select { |ub| ub.returned == false }
+      .map { |ub| ub.book.title } 
   end
 
   def return_book(book_title)
